@@ -2,6 +2,15 @@
 {% block title %}Welcome to Django{% endblock %}
 {% block head %}Welcome to Django{% endblock %}
 {% block content %}
+        <div align=right><a href="/logout">Logout</a>
+        	<p><a href="/allblogs">previous blogs</a></p></div>
+
     <p>Welcome {{ user.username }} !!!</p>
-    <a href="/logout/">Logout</a>
+    <p> {{ user.username }}, Please Write your Blog<p>
+    	<form method="post" action=".">{% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Entry" />
+    </form>
 {% endblock %}

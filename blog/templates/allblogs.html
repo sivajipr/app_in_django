@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}These are your blogs{% endblock %}
+{% block content %}
+        <div align=right><a href="/logout">Logout</a>
+        	    <a href= "/home">Next Blog</a></p></div>
+                    <h1><p><center>Hai {{ user }} these are your blogs!!!</p>
+                        
+                {% for blogs in blog %}
+                   <div align='justify' size='5' color=green>{{blogs.body}}<p></div>
+
+
+    	{% endfor %}
+{% endblock %}
